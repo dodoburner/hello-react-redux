@@ -2,13 +2,20 @@
 import "@hotwired/turbo-rails";
 import "./controllers";
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
 import ReactDOM from "react-dom";
 import Greeting from "./Greeting";
 
 function App() {
-  return <Greeting />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/greeting" element={<Greeting />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 ReactDOM.render(
