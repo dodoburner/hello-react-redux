@@ -4,17 +4,15 @@ import { getMessage } from "./redux/messagesSlice"
 
 export default function Greeting() {
   const dispatch = useDispatch()
-  const message = useSelector((state) => state.messages)
+  const { greeting } = useSelector((state) => state.messages)
 
   useEffect(() => {
     dispatch(getMessage())
   }, [])
 
-  console.log(message)
-
   return (
     <div>
-      <p>AAAAAA</p>
+      <p>{greeting}</p>
     </div>
   )
 }
